@@ -1,6 +1,10 @@
 pipeline {
     agent any
-    
+
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+    }
     parameters {
         booleanParam(
             name: 'DESTROY',
@@ -12,7 +16,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git 'https://github.com/liontechcanada/jenkins-terraform-infra.git'
+               git branch: 'eks-dev', url: 'https://github.com/liontechcanada/jenkins-terraform-infra.git'
             }
         }
         
