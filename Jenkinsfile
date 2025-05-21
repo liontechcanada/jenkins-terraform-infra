@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git 'https://github.com/liontechcanada/terraform-eks-repo.git'
+               git 'https://github.com/liontechcanada/jenkins-terraform-infra.git'
             }
         }
         
