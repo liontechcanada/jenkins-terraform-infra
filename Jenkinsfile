@@ -5,13 +5,13 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
-    parameters {
-        booleanParam(
-            name: 'DESTROY',
-            defaultValue: false,
-            description: 'Check to DESTROY infrastructure'
-        )
-    }
+    // parameters {
+    //     booleanParam(
+    //         name: 'DESTROY',
+    //         defaultValue: false,
+    //         description: 'Check to DESTROY infrastructure'
+    //     )
+    // }
     
     stages {
         stage('Checkout') {
